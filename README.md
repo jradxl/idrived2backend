@@ -10,19 +10,20 @@ You can install this in the Ubuntu 21.04 released version of Duplicity, which is
 
 From the IDrive.com website, you can download the package of programs they provide for Linux.  These are Perl scripts and rather laborious to use.
 During the setup of these scripts Perl the actual ELF utilities, written by IDrive, will be downloaded. These utilities are much easier to use and
-are fortunately available independently from this url:-
+are fortunately available independently, from this url:-
 
     https://www.idrivedownloads.com/downloads/linux/download-options/IDrive_linux_64bit.zip
 
 The original idrivedbackend used *idevsutil_dedup*, which I could not get working with my account, so I have used *idevsutil*.
 
-*idevsutil* methodology is always to upload with a full path, so within the Idrive account, the Duplicity files end up in the wrong place.
+*idevsutil* methodology is always to upload with a full path, so within the IDrive account, the Duplicity files end up in the wrong place.
 
 For an upload path like *idrived2://mydir1/mydir2*, on IDrive the path becomes:-
 
     *Home/mydir1/mydir2/tmp/duplicity-_feau4ts-tempdir/duplicity-full.20210525T163356Z.<...>.gpg*
 
-Whereas Duplicity expects the files at the required remote path to prevent an upload corruption error:-
+Whereas Duplicity expects the files at the required remote path root, to prevent an upload corruption error:-
+
     *Home/mydir1/mydir2/duplicity-full.20210525T163356Z.<...>.gpg*
 
 The methodology used in this version is as follows:-
