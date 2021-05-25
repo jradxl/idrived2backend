@@ -1,0 +1,8 @@
+#Copy this file to .env and place in dir where
+#you run idrive-home.sh
+export IDEVSPATH=/path/to/idevsutil
+export IDRIVEID=username@somewhere
+export IDPWDFILE=Secret-Password
+export PASSPHRASE=Secret-GPG-Passphrase
+export EVS_TEMP_DIR=/home/duplicity/evs-temp
+
